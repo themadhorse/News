@@ -1,1 +1,14 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.reqGreen {
+  background-color: rgba(152,238,200,255);
+}
+
+.reqBack {
+  background-color: #ebf2f7;
+}
+
+html {
+  overflow: hidden;
+}

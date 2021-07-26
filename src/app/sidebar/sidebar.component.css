@@ -1,0 +1,41 @@
+.container {
+  border: 1px solid #d7dfe7;
+  left: -40%;
+  width: 140%;
+  position: relative;
+  border-left: none;
+  border-top: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 6px 8px 4px #b2d2e985;
+  min-height: 100vh;
+  background: #ebf2f7;
+}
+
+.cards {
+margin-top: 15%;
+width: 84%;
+left: 8%;
+box-shadow:0 0px 20px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+}
+
+#userInfo {
+  margin-left: -8%;
+}
+
+.circle {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+  background-color: lightgray;
+}
+
+.icons {
+  margin-top: 10px;
+  width: 95px;
+  height: 75px;
+  border: gray;
+  font-size: 40px;
+}
