@@ -1,0 +1,36 @@
+.cards
+{
+  box-shadow:0 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 110%;
+  height: auto;
+  margin: 10px;
+  padding: 1%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.circle {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid rgba(152,238,200,255);
+  background-color: rgba(152,238,200,255);
+  margin: 6%;
+}
+
+.delete {
+  position: relative;
+  left: 75px;
+  top: 30%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: white;
+  color: red;
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
