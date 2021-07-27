@@ -5,10 +5,17 @@
   width: 110%;
   height: auto;
   margin: 10px;
-  padding: 1%;
-  overflow: hidden;
+  padding: 2%;
+  position: relative;
+  cursor: pointer;
+  max-height: 90px;
+  min-height: 90px;
+}
+
+.noOverflow {
+  text-overflow: "...";
   white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .circle {
@@ -33,4 +40,47 @@
   color: red;
   box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+ .pages {
+  position: relative;
+  left: 35%;
+  margin-top: 2.7%;
+}
+.page-number {
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border: #b3b3b3;
+  color: white;
+  border-radius: 50%;
+  background-color: #b3b3b3;
+  position: relative;
+  margin-right: 50px;
+  cursor: pointer;
+}
+.page-number-white {
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border: white;
+  color: black;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.number {
+  position: relative;
+  top: 16%;
+}
+
+#content {
+  padding-right: 100px;
+}
+
+.fill {
+  flex: 1 1 auto;
 }

@@ -12,24 +12,24 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getData() {
+  getData(numberOfPosts: number) {
     return this.http.get<Post[]>('https://api.first.org/data/v1/news')
     .pipe(
       map((responseData: any): Post[] => responseData.data)
     )
     .subscribe(
-      (posts: Post[]) => { this.posts = posts.slice(0,5); console.log(this.posts); this.updateList.next(this.posts);}
+      (posts: Post[]) => { this.posts = posts.slice(0,numberOfPosts); console.log(this.posts); this.updateList.next(this.posts);}
     );
   }
 
   get postList() {
-    console.log(this.posts)
     return this.posts.slice();
   }
 
-  deletePost(index: number) {
-    this.posts.splice(index,1);
-    this.updateList.next(this.posts.slice());
+  deletePost(id: number) {
+    const updatedPosts = this.posts.filter((post: Post) => post.id != id);
+    this.posts = updatedPosts
+    this.updateList.next(this.posts);
   }
 
 }
