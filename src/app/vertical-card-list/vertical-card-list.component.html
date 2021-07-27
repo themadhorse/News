@@ -1,24 +1,26 @@
-<div class="container" style="margin-top: 6%;">
-  <div class="row" *ngFor="let post of getPosts(pageNo); let i = index;">
+<div class="container" style="margin-top: 6%">
+  <div class="row" *ngFor="let post of getPosts(pageNo); let i = index">
     <div class="col-xs-10 col-md-10 col-lg-10">
-      <div class="card cards" (click)="openContent()">
+      <div class="card cards" (click)="openContent(post.link)">
         <div class="row">
           <div class="col-xs-1 col-md-1 col-lg-1">
             <div class="circle"></div>
           </div>
           <div class="col-xs-10 col-md-10 col-lg-10 noOverflow" id="content">
             <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text" style="margin-top: -10px; margin-bottom: 3px;">{{ post.summary ? post.summary : "" }}</p>
+            <p class="card-text" style="margin-top: -10px; margin-bottom: 3px">
+              {{ post.summary ? post.summary : "" }}
+            </p>
             <h6 class="card-subtitle text-muted">{{ post.published }}</h6>
           </div>
           <div class="col-xs-1 col-md-1 col-lg-1"></div>
         </div>
       </div>
     </div>
-    <div class="col-xs-2 col-md-2 col-lg-2" (click)="onDelete(post.id);">
-        <div class="delete text-center">
-          <h5 style="transform: translateY(32%); font-size: 20;">X</h5>
-        </div>
+    <div class="col-xs-2 col-md-2 col-lg-2" (click)="onDelete(post.id)">
+      <div class="delete text-center">
+        <h5 style="transform: translateY(32%); font-size: 20">X</h5>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -26,16 +28,34 @@
       <div class="col-xs-4 col-md-4 col-lg-4"></div>
       <div class="col-xs-4 col-md-4 col-lg-4">
         <div class="row">
-          <div class="col-xs-4 col-md-4 col-lg-4 text-center"
-          (click)="pageNo = 0;" [ngClass]="{'page-number-white': pageNo === 0, 'page-number': pageNo !== 0}">
+          <div
+            class="col-xs-4 col-md-4 col-lg-4 text-center"
+            (click)="pageNo = 0"
+            [ngClass]="{
+              'page-number-white': pageNo === 0,
+              'page-number': pageNo !== 0
+            }"
+          >
             <b class="number">1</b>
           </div>
-          <div class="col-xs-4 col-md-4 col-lg-4 text-center"
-          (click)="pageNo = 1;" [ngClass]="{'page-number-white': pageNo === 1, 'page-number': pageNo !== 1}">
+          <div
+            class="col-xs-4 col-md-4 col-lg-4 text-center"
+            (click)="pageNo = 1"
+            [ngClass]="{
+              'page-number-white': pageNo === 1,
+              'page-number': pageNo !== 1
+            }"
+          >
             <b class="number">2</b>
           </div>
-          <div class="col-xs-4 col-md-4 col-lg-4 page-number text-center"
-          (click)="pageNo = 2;" [ngClass]="{'page-number-white': pageNo === 2, 'page-number': pageNo !== 2}">
+          <div
+            class="col-xs-4 col-md-4 col-lg-4 page-number text-center"
+            (click)="pageNo = 2"
+            [ngClass]="{
+              'page-number-white': pageNo === 2,
+              'page-number': pageNo !== 2
+            }"
+          >
             <b class="number">3</b>
           </div>
         </div>
@@ -44,3 +64,6 @@
     </div>
   </div>
 </div>
+<app-popup *ngIf="showIframe" [src]="getSrc(src)" (shouldClose)="closePopup($event)"></app-popup>
+
+<!-- <iframe src="target.html" name="iframe1" frameborder="0"></iframe> -->

@@ -32,10 +32,19 @@ border-radius: 10px;
   background-color: lightgray;
 }
 
-.icons {
+.icon {
   margin-top: 10px;
   width: 95px;
   height: 75px;
   border: gray;
+  font-size: 40px;
+}
+
+.icon-green {
+  margin-top: 10px;
+  width: 95px;
+  height: 75px;
+  border: gray;
+  background-color: rgba(152,238,200,255);
   font-size: 40px;
 }

@@ -1,0 +1,22 @@
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+iframe {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 80vh;
+  width: 80vw;
+  z-index: 100;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.26);
+  border: 8px solid rgb(105, 105, 105);
+  border-radius: 20px;
+}

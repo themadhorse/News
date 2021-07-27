@@ -1,4 +1,6 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 import { Post } from '../post.model';
@@ -11,11 +13,13 @@ import { Post } from '../post.model';
 export class VerticalCardListComponent implements OnInit, OnDestroy {
   //posts: Post[] = [];
   postSub: Subscription;
-  pageNo = 1;
+  pageNo = 0;
   pages: Post[][] = [];
+  showIframe = false;
+  src: string;
 
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.dataService.getData(15);
@@ -45,8 +49,19 @@ export class VerticalCardListComponent implements OnInit, OnDestroy {
     this.postSub.unsubscribe();
   }
 
-  openContent(){
-    console.log("lmao")
+  openContent(src: string){
+    this.showIframe = true;
+    this.src = src;
+    console.log(this.showIframe)
+  }
+
+  closePopup(event: boolean){
+    this.showIframe = !event;
+    console.log(this.showIframe);
+  }
+
+  getSrc(src: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(src);
   }
 
 }
