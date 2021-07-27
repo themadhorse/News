@@ -22,8 +22,10 @@ export class VerticalCardListComponent implements OnInit, OnDestroy {
   constructor(private dataService: DataService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.dataService.getData(15);
     //this.posts = this.dataService.postList;
+    this.pages.push(this.dataService.postList.slice(0,5));
+    this.pages.push(this.dataService.postList.slice(5,10));
+    this.pages.push(this.dataService.postList.slice(10,15));
 
     this.postSub = this.dataService.updateList.subscribe(
       (postList: Post[]) => {
@@ -40,7 +42,6 @@ export class VerticalCardListComponent implements OnInit, OnDestroy {
   }
 
   onDelete(id: number) {
-    //this.dataService.deletePost(((this.pageNo)*5)+index);
     this.dataService.deletePost(id);
     console.log(id);
   }

@@ -1,3 +1,88 @@
 ul {
   list-style-type: none;
 }
+
+.container {
+  position: relative;
+  margin-top: 1.5%;
+}
+
+.wrapper {
+  margin-left: 7%;
+  margin-bottom: 6%;
+  padding-right: 2%;
+  width: 90%;
+}
+
+.cards {
+  min-height: 275px;
+  max-height: 275px;
+  cursor: pointer;
+}
+
+.cross {
+  color: red;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  left: 92%;
+  border: none;
+  background-color: white;
+  font-size: 20px;
+}
+
+.rect {
+  margin-top: 3%;
+  width: 240px;
+  height: 130px;
+  border: lightgray;
+  background-color: lightgray;
+}
+
+.noOverflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+li {
+  margin-top: 3%;
+}
+
+.pages {
+  position: relative;
+  left: 40%;
+  margin-top: 1%;
+}
+.page-number {
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border: #b3b3b3;
+  color: white;
+  border-radius: 50%;
+  background-color: #b3b3b3;
+  position: relative;
+  margin-right: 50px;
+  cursor: pointer;
+}
+.page-number-white {
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border: white;
+  color: black;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.number {
+  position: relative;
+  top: 16%;
+}
+
+
+

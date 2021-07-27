@@ -4,9 +4,9 @@ import { HorizontalCardListComponent } from './horizontal-card-list/horizontal-c
 import { VerticalCardListComponent } from './vertical-card-list/vertical-card-list.component';
 
 const routes: Routes = [
-  {path: "list-view", component: VerticalCardListComponent},
-  {path: "card-view", component: HorizontalCardListComponent},
-  {path: "", redirectTo: '/card-view', pathMatch: 'full'}
+  {path: "list", component: VerticalCardListComponent},
+  {path: "card", component: HorizontalCardListComponent},
+  {path: "", redirectTo: 'card', pathMatch: 'full'}
 ];
 
 @NgModule({

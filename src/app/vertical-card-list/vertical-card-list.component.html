@@ -9,9 +9,10 @@
           <div class="col-xs-10 col-md-10 col-lg-10 noOverflow" id="content">
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text" style="margin-top: -10px; margin-bottom: 3px">
-              {{ post.summary ? post.summary : "" }}
+              {{ post.summary ? post.summary : " " }}
             </p>
-            <h6 class="card-subtitle text-muted">{{ post.published }}</h6>
+            <br *ngIf="!post.summary">
+            <h6 class="card-subtitle text-muted" style="position: relative; top: -1%;">{{ post.published }}</h6>
           </div>
           <div class="col-xs-1 col-md-1 col-lg-1"></div>
         </div>
@@ -19,7 +20,9 @@
     </div>
     <div class="col-xs-2 col-md-2 col-lg-2" (click)="onDelete(post.id)">
       <div class="delete text-center">
-        <h5 style="transform: translateY(32%); font-size: 20">X</h5>
+        <h5 style="transform: translateY(32%);">
+          <p>╳</p>
+        </h5>
       </div>
     </div>
   </div>
@@ -34,6 +37,7 @@
             [ngClass]="{
               'page-number-white': pageNo === 0,
               'page-number': pageNo !== 0
+
             }"
           >
             <b class="number">1</b>
