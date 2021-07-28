@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { filter, map } from 'rxjs/operators';
+import { Details } from "./feedback/feedback.component";
 
 import { Post } from "./post.model";
 
@@ -30,6 +31,11 @@ export class DataService {
     const updatedPosts = this.posts.filter((post: Post) => post.id != id);
     this.posts = updatedPosts
     this.updateList.next(this.posts);
+  }
+
+  storeFormData(formData: Details){
+    this.http.post("https://news-app-c4085-default-rtdb.firebaseio.com/feedback.json", formData)
+    .subscribe();
   }
 
 }
