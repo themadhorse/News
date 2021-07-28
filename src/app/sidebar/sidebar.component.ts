@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class SidebarComponent implements OnInit, OnDestroy {
   view = 1;
   routeSub: Subscription;
+  viewingFeedback = false;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -32,6 +33,10 @@ export class SidebarComponent implements OnInit, OnDestroy {
   onCardClick() {
     this.view = 1;
     this.router.navigate(['card']);
+  }
+
+  showFeedback() {
+    this.viewingFeedback = true;
   }
 
   ngOnDestroy() {

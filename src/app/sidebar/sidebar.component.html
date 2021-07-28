@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{'feedback-sidebar': viewingFeedback ? 100 : 0}">
   <div class="row">
     <div class="col-xs-12">
       <div class="card cards">
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div class="card cards" style="top: -30px;">
+      <div class="card cards" style="top: -30px;" *ngIf="!viewingFeedback">
         <div class="card-body">
           <div class="row">
             <div class="col-xs-12 col-md-12 col-lg-12">
@@ -47,12 +47,17 @@
         </div>
       </div>
 
-      <div class="card cards" style="top: -60px;">
+      <div class="card cards" [ngStyle]="{'top': viewingFeedback ? '-30px' : '-60px'}">
         <div class="card-body">
           <h4 class="card-title text-center">Have a Feedback?</h4>
-          <button style="border: none; border-radius: 10px; width: 100%; height: 60px; background-color: rgba(152,238,200,255);"><b>We're Listening!</b></button>
+          <button (click)="showFeedback()"
+          style="border: none; border-radius: 10px; width: 100%; height: 60px;"
+          [ngStyle]="{'background-color': viewingFeedback ? '#eda5a7' : 'rgba(152,238,200,255)'}">
+          <b>We're Listening!</b></button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-feedback *ngIf="viewingFeedback" (shouldClose)="viewingFeedback = !$event"></app-feedback>

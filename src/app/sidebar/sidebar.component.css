@@ -48,3 +48,12 @@ border-radius: 10px;
   background-color: rgba(152,238,200,255);
   font-size: 40px;
 }
+
+.feedback-sidebar {
+  z-index: 100;
+  box-shadow: none;
+  border: none;
+  border-top-right-radius: none;
+  border-bottom-right-radius: none;
+}
+

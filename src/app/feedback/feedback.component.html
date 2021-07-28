@@ -1,0 +1,61 @@
+<div class="backdrop" (click)="shouldClose.emit(true)"></div>
+<div class="feedback-form">
+  <div class="wrapper">
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <h4>Thank you so much for taking the time!</h4>
+      <p style="margin-top: -10px; margin-bottom: 20px;">Please provide the below details!</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12 form-group" style="width: 50%">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder="John">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12 form-group" style="width: 50%">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" class="form-control" formControlName="lastName" placeholder="Doe">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12 form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" cols="30" rows="3"
+          class="form-control" placeholder="Enter your full Postal Address" formControlName="address"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12 form-group" style="width: 60%">
+          <label for="country">Country:</label>
+          <div class="autocomplete">
+            <input type="text" id="country" class="form-control" placeholder="India" formControlName="country">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-6 col-lg-6 form-group" style="width: 50%">
+          <label for="email">Email:</label>
+          <input type="text" id="email" class="form-control" placeholder="example@sample.com" formControlName="email"
+          [ngClass]="{'error': feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched}">
+        </div>
+        <div class="col-xs-6 col-md-6 col-lg-6" *ngIf="feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched">
+          <span style="color: red; position: relative; top: 35px; left: -10px;">Please enter a valid email</span>
+        </div>
+      </div>
+      <div class="row">
+        <label for="phoneNo">Phone Number:</label>
+        <div class="col-xs-2 col-md-2 col-lg-2 form-group" style="margin-right: -2%; width: 14%;">
+          <input type="number" id="phoneNo" class="form-control" placeholder="+91" formControlName="phoneHeader">
+        </div>
+        <div class="col-xs-10 col-md-10 col-lg-10 form-group" style="width: 38%;">
+          <input type="number" id="phoneNo" class="form-control" placeholder="123456789" formControlName="phoneNo">
+        </div>
+      </div>
+      <button type="submit" class="btn-submit"
+      [disabled]="feedbackForm.invalid"
+      [ngStyle]="{'opacity': feedbackForm.invalid ? 0.5 : 1, 'cursor': feedbackForm.invalid ? 'not-allowed' : 'pointer'}">
+        <b>Submit Feedback</b>
+      </button>
+    </form>
+  </div>
+</div>
+
