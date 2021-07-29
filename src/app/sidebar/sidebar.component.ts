@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit, OnDestroy {
-  view = 1;
+  view = 2;
   routeSub: Subscription;
   viewingFeedback = false;
 
