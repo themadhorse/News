@@ -60,4 +60,4 @@
   </div>
 </div>
 
-<app-feedback *ngIf="viewingFeedback" (shouldClose)="viewingFeedback = !$event"></app-feedback>
+<app-feedback *ngIf="viewingFeedback" (shouldClose)="viewingFeedback = !$event" [@slideInOut]></app-feedback>

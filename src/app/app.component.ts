@@ -6,6 +6,7 @@ import { DataService } from './data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit{
   title = 'KalpasTaskOne';
 
@@ -15,3 +16,4 @@ export class AppComponent implements OnInit{
     this.dataService.getData(18);
   }
 }
+

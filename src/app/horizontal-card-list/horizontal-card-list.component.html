@@ -4,13 +4,15 @@
       <div class="card cards">
         <div class="wrapper">
           <button class="cross float-right" (click)="onDelete(post.id)">╳</button>
-          <div class="wrapper-content noOverflow" (click)="openContent(post.link);">
+          <div class="post-wrapper" (click)="openContent(post.link)">
+          <div class="wrapper-content noOverflow">
             <h4 class="card-title">{{ post.title }}</h4>
             <p class="card-text" style="margin-bottom: 2%;">{{ post.summary ? post.summary : "" }}</p>
             <br *ngIf="!post.summary">
             <h6 class="card-subtitle text-muted">{{ post.published }}</h6>
           </div>
-          <div class="rect"></div>
+          <div class="rect" style="cursor: pointer;"></div>
+          </div>
         </div>
       </div>
     </li>

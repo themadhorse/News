@@ -43,18 +43,15 @@ export class HorizontalCardListComponent implements OnInit, OnDestroy {
 
   closePopup(event: boolean){
     this.showIframe = !event;
-    console.log(this.showIframe);
   }
 
   onDelete(id: number) {
     this.dataService.deletePost(id);
-    console.log(id);
   }
 
   openContent(src: string){
     this.showIframe = true;
     this.src = src;
-    console.log(this.showIframe)
   }
 
   ngOnDestroy() {

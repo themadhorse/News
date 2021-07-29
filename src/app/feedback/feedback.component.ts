@@ -34,7 +34,7 @@ export interface Details {
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
-  styleUrls: ['./feedback.component.css'],
+  styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
   @Output() shouldClose = new EventEmitter<boolean>();
@@ -68,7 +68,7 @@ export class FeedbackComponent implements OnInit {
       address: this.feedbackForm.value.address,
       country: this.feedbackForm.value.country,
       email: this.feedbackForm.value.email,
-      phoneNo: `+${this.feedbackForm.value.phoneNo}`,
+      phoneNo: `${this.feedbackForm.value.phoneNo}`,
     };
     this.dataService.storeFormData(details);
     this.feedbackForm.reset();
@@ -85,7 +85,7 @@ export class FeedbackComponent implements OnInit {
 
   validPhoneNumber = (control: FormControl) => {
 
-      if(!phone("+"+control.value).isValid)
+      if(!phone(control.value).isValid)
         return {'invalidPhoneNumber': true};
       return null;
     }
