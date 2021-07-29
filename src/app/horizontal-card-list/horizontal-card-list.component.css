@@ -5,35 +5,50 @@ ul {
 .container {
   position: relative;
   margin-top: 1.5%;
+  margin-left: -5%;
+  width: 67vw;
 }
 
 .wrapper {
   margin-left: 7%;
   margin-bottom: 6%;
   padding-right: 2%;
-  width: 90%;
+  width: 100%;
 }
 
 .cards {
-  min-height: 275px;
-  max-height: 275px;
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  height: 107%;
+  max-height: 104%;
+  min-height: 104%;
+  box-shadow:0 0px 20px rgba(0, 0, 0, 0.2);
+  padding-right: 2%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+}
+
+.post-wrapper {
+  width: 90%;
+  height: 100%;
 }
 
 .cross {
   color: red;
-  height: 30px;
-  width: 30px;
   position: relative;
-  left: 92%;
+  left: 82%;
   border: none;
   background-color: white;
-  font-size: 20px;
+  font-size: 120%;
 }
 
 .rect {
-  margin-top: 3%;
-  width: 240px;
-  height: 130px;
+  width: 100%;
+  position: relative;
+  top: 2%;
+  left: -1%;
+  height: 18vh;
   border: lightgray;
   background-color: lightgray;
 }
@@ -55,27 +70,29 @@ li {
 }
 .page-number {
   box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
-  width: 40px;
-  height: 40px;
+  width: 12%;
+  height: 5.5vh;
   border: #b3b3b3;
   color: white;
   border-radius: 50%;
   background-color: #b3b3b3;
   position: relative;
-  margin-right: 50px;
+  margin-right: 15%;
   cursor: pointer;
+  margin-top: 3%;
 }
 .page-number-white {
   box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
-  width: 40px;
-  height: 40px;
+  width: 12%;
+  height: 5.5vh;
   border: white;
   color: black;
   border-radius: 50%;
   background-color: white;
   position: relative;
-  margin-right: 50px;
+  margin-right: 15%;
   cursor: pointer;
+  margin-top: 3%;
 }
 
 .number {
@@ -85,8 +102,16 @@ li {
 
 .wrapper-content {
   cursor: pointer;
-  width: 95%;
+  width: 100%;
+  height: 38%;
+  min-height: 38%;
 }
+
+.card-subtitle {
+  position: relative;
+  top: 7%;
+}
+
 
 
 

@@ -8,7 +8,7 @@
           </div>
           <div class="col-xs-10 col-md-10 col-lg-10 noOverflow" id="content">
             <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text" style="margin-top: -10px; margin-bottom: 3px">
+            <p class="card-text" style="margin-top: -1%; margin-bottom: 1%">
               {{ post.summary ? post.summary : " " }}
             </p>
             <br *ngIf="!post.summary">
@@ -20,7 +20,7 @@
     </div>
     <div class="col-xs-2 col-md-2 col-lg-2" (click)="onDelete(post.id)">
       <div class="delete text-center">
-        <h5 style="transform: translateY(32%);">
+        <h5 style="transform: translateY(28%); font-size: 120%;">
           <p>╳</p>
         </h5>
       </div>

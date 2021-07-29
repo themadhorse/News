@@ -15,6 +15,7 @@ export class HorizontalCardListComponent implements OnInit, OnDestroy {
   postSub: Subscription;
   showIframe = false;
   src: string;
+  tempPost: Post;
 
   constructor(private dataService: DataService, private sanitizer: DomSanitizer) { }
 
@@ -29,6 +30,7 @@ export class HorizontalCardListComponent implements OnInit, OnDestroy {
         this.pages.push(postList.slice(0,6));
         this.pages.push(postList.slice(6,12));
         this.pages.push(postList.slice(12,18));
+        this.tempPost = postList[5];
       }
     );
   }

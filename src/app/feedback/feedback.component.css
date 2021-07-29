@@ -60,17 +60,17 @@ label {
 }
 
 textarea {
-  min-height: 87px;
-  max-height: 87px;
+  min-height: 75%;
+  max-height: 75%;
 }
 
 .country-dropdown {
   position: absolute;
   z-index: 110;
-  transform: translate3d(1px, -5px, 0);
-  width: 386px;
+  transform: translate3d(0.05vw, -0.25vw, 0);
+  width: 48.25%;
   height: auto;
-  max-height: 200px;
+  max-height: 27.5%;
   background-color: white;
   overflow-y: auto;
 }

@@ -3,7 +3,7 @@
   <div class="wrapper">
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
       <h4>Thank you so much for taking the time!</h4>
-      <p style="margin-top: -10px; margin-bottom: 20px;">Please provide the below details!</p>
+      <p style="margin-top: -1%; margin-bottom: 3%;">Please provide the below details!</p>
       <div class="row">
         <div class="col-xs-12 col-md-12 col-lg-12 form-group" style="width: 50%">
           <label for="firstName">First Name:</label>
@@ -47,16 +47,17 @@
           [ngClass]="{'error': feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched}">
         </div>
         <div class="col-xs-6 col-md-6 col-lg-6" *ngIf="feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched">
-          <span style="color: red; position: relative; top: 35px; left: -10px;">Please enter a valid email</span>
+          <span style="color: red; position: relative; top: 5vh; left: -0.5vw;">Please enter a valid email</span>
         </div>
       </div>
       <div class="row">
         <label for="phoneNo">Phone Number:</label>
         <div class="col-xs-6 col-md-6 col-lg-6 form-group" style="width: 38%;">
-          <input type="text" id="phoneNo" class="form-control" placeholder="123456789" formControlName="phoneNo">
+          <input type="text" id="phoneNo" class="form-control" placeholder="123456789" formControlName="phoneNo"
+          [ngClass]="{'error': feedbackForm.get('phoneNo')?.invalid && feedbackForm.get('phoneNo')?.touched}">
         </div>
         <div class="col-xs-6 col-md-6 col-lg-6" *ngIf="feedbackForm.get('phoneNo')?.invalid && feedbackForm.get('phoneNo')?.touched">
-          <span style="color: red; position: relative; top: 5px; left: -10px;">Please enter a valid phone number</span>
+          <span style="color: red; position: relative; top: 1vh; left: -0.5vw;">Please enter a valid phone number</span>
         </div>
       </div>
       <button type="submit" class="btn-submit"
