@@ -3,12 +3,12 @@
   box-shadow:0 0px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   width: 110%;
-  height: auto;
+  height: 86%;
   margin: 1%;
   padding: 2%;
   position: relative;
   cursor: pointer;
-  max-height: 100%;
+  max-height: 86%;
   min-height: 86%;
 }
 
